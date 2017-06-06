@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/HooverWorkshop/ShootingScriptTest/ShootingScriptTest.unity
+  isLoaded: 1
+  isActive: 1
