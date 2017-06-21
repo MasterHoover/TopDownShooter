@@ -12,7 +12,7 @@ using UnityEngine;
 
 public class TestShooter : MonoBehaviour 
 {
-	public ShootingScript shootingScript;
+	public ShootingInterface shootingScript;
 	public DirectionPoint directionPoint;
 	public Projectile.Allegiance allegiance;
 

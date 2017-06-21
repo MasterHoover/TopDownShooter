@@ -14,7 +14,7 @@ public class SimpleProjectile : Projectile
 
 	void Start ()
 	{
-		//Invoke ("SelfDestruct", duration); // Invoke the SelfDestruct
+		Invoke ("SelfDestruct", duration); // Invoke the SelfDestruct
 	}
 
 	// The implemented function (parent forces the implementation of this function)
@@ -41,5 +41,17 @@ public class SimpleProjectile : Projectile
 			Debug.LogWarning ("Enemy[" + enemy.name + "] doesn't have an HPScript.");
  		}
 		Destroy (gameObject);
+	}
+
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		if (col.gameObject.tag != "Projectile") 
+		{
+			if (allegiance == Allegiance.Good && col.gameObject.tag != "Player") 
+			{
+				Debug.Log ("[" + name + "] collided with [" + col.gameObject.name + "]");
+				Destroy (gameObject);
+			}
+		}
 	}
 }

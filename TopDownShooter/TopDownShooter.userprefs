@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MovingInterface.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Mover.cs" Line="17" Column="33" />
+      <File FileName="Assets\Scripts\MovingInterface.cs" Line="26" Column="70" />
+      <File FileName="Assets\Scripts\Shooter.cs" Line="30" Column="50" />
+      <File FileName="Assets\Scripts\ShootingInterface.cs" Line="43" Column="33" />
+      <File FileName="Assets\HooverWorkshop\ShootingScriptTest\SimpleProjectile.cs" Line="40" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

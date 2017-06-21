@@ -49,15 +49,18 @@
      <Compile Include="Assets\HooverWorkshop\HPScriptTest\BattleLog.cs" />
      <Compile Include="Assets\HooverWorkshop\HPScriptTest\DamageSource.cs" />
      <Compile Include="Assets\HooverWorkshop\ShootingScriptTest\DirectionPoint.cs" />
+     <Compile Include="Assets\HooverWorkshop\ShootingScriptTest\ShowShootingDir.cs" />
      <Compile Include="Assets\HooverWorkshop\ShootingScriptTest\SimpleProjectile.cs" />
      <Compile Include="Assets\HooverWorkshop\ShootingScriptTest\TestShooter.cs" />
-     <Compile Include="Assets\Scripts\Oli\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Oli\EventArgs\DiedEventArgs.cs" />
-     <Compile Include="Assets\Scripts\Oli\HPScript.cs" />
-     <Compile Include="Assets\Scripts\Oli\InputsNames.cs" />
-     <Compile Include="Assets\Scripts\Oli\Projectile.cs" />
-     <Compile Include="Assets\Scripts\Oli\ShootingInput.cs" />
-     <Compile Include="Assets\Scripts\Oli\ShootingScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EventArgs\DiedEventArgs.cs" />
+     <Compile Include="Assets\Scripts\HPScript.cs" />
+     <Compile Include="Assets\Scripts\InputsNames.cs" />
+     <Compile Include="Assets\Scripts\Mover.cs" />
+     <Compile Include="Assets\Scripts\MovingInterface.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\Shooter.cs" />
+     <Compile Include="Assets\Scripts\ShootingInterface.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
