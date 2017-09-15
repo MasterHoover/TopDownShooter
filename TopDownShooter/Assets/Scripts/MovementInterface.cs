@@ -9,7 +9,7 @@ public class MovementInterface : MonoBehaviour
 	void Awake ()
 	{
 		rb = GetComponent<Rigidbody2D> ();
-		if (!rb == null) 
+		if (rb == null) 
 		{
 			Debug.LogWarning ("[" + name + "]/MovingInterface : No Rigidbody2D was found on gameObject. Collisions will be ignored.");
 		}

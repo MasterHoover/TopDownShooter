@@ -19,7 +19,7 @@ public class Shooter : MonoBehaviour
 		AutoDirectional
 	}
 
-	public enum LookingType
+	public enum AimingType
 	{
 		Deg360,
 		Dir4,
@@ -27,7 +27,7 @@ public class Shooter : MonoBehaviour
 	}
 
 	public ShootingType shootingType;
-	public LookingType lookingType;
+	public AimingType aimingType;
 	public ShootingInterface shootingScript;
 
 	void Awake ()
@@ -46,7 +46,7 @@ public class Shooter : MonoBehaviour
 
 		if (input != Vector2.zero) 
 		{
-			if (lookingType == LookingType.Dir4)
+			if (aimingType == AimingType.Dir4)
 			{
 				float angleInRad = Mathf.Atan2 (input.y, input.x);
 				float angleInDeg = angleInRad * Mathf.Rad2Deg;
@@ -76,7 +76,7 @@ public class Shooter : MonoBehaviour
 					input = Vector2.left;
 				}
 			} 
-			else if (lookingType == LookingType.Dir8)
+			else if (aimingType == AimingType.Dir8)
 			{
 				float angleInRad = Mathf.Atan2 (input.y, input.x);
 				float angleInDeg = angleInRad * Mathf.Rad2Deg;
