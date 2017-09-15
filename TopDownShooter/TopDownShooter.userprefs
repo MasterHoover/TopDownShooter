@@ -1,12 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MovingInterface.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Shooter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Mover.cs" Line="17" Column="33" />
-      <File FileName="Assets\Scripts\MovingInterface.cs" Line="26" Column="70" />
-      <File FileName="Assets\Scripts\Shooter.cs" Line="30" Column="50" />
-      <File FileName="Assets\Scripts\ShootingInterface.cs" Line="43" Column="33" />
-      <File FileName="Assets\HooverWorkshop\ShootingScriptTest\SimpleProjectile.cs" Line="40" Column="4" />
+      <File FileName="Assets\Scripts\Shooter.cs" Line="68" Column="33" />
+      <File FileName="Assets\Scripts\AvatarController.cs" Line="133" Column="4" />
+      <File FileName="Assets\Scripts\MovementInterface.cs" Line="5" Column="31" />
+      <File FileName="Assets\Scripts\ShootingInterface.cs" Line="1" Column="1" />
+      <File FileName="Assets\HooverWorkshop\ShootingScriptTest\SimpleProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\HooverWorkshop\ShootingScriptTest\ShowShootingDir.cs" Line="27" Column="53" />
+      <File FileName="Assets\Scripts\InputsNames.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
+      <File FileName="..\..\Monster-Shooter\Monster Shooter\Assets\Scripts\Oli\MovementInterface.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

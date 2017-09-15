@@ -18,7 +18,16 @@ public class Shooter : MonoBehaviour
 		AimAndTrigger,
 		AutoDirectional
 	}
+
+	public enum LookingType
+	{
+		Deg360,
+		Dir4,
+		Dir8
+	}
+
 	public ShootingType shootingType;
+	public LookingType lookingType;
 	public ShootingInterface shootingScript;
 
 	void Awake ()
@@ -34,8 +43,93 @@ public class Shooter : MonoBehaviour
 		shootingScript.Projectile = projectile;
 		shootingScript.DistanceOffset = distanceOffset;
 		Vector2 input = InputDirection;
+
 		if (input != Vector2.zero) 
 		{
+			if (lookingType == LookingType.Dir4)
+			{
+				float angleInRad = Mathf.Atan2 (input.y, input.x);
+				float angleInDeg = angleInRad * Mathf.Rad2Deg;
+				if (angleInDeg <= -135f)
+				{
+					// W
+					input = Vector2.left;
+				}
+				else if (angleInDeg <= -45f)
+				{
+					// S
+					input = Vector2.down;
+				}
+				else if (angleInDeg <= 45f)
+				{
+					// E
+					input = Vector2.right;
+				}
+				else if (angleInDeg <= 135f)
+				{
+					// N
+					input = Vector2.up;
+				}
+				else
+				{
+					// W
+					input = Vector2.left;
+				}
+			} 
+			else if (lookingType == LookingType.Dir8)
+			{
+				float angleInRad = Mathf.Atan2 (input.y, input.x);
+				float angleInDeg = angleInRad * Mathf.Rad2Deg;
+				if (angleInDeg <= -157.5f)
+				{
+					// W
+					input = Vector2.left;
+				}
+				else if (angleInDeg <= -112.5f)
+				{
+					// SW
+					float sqrt = Mathf.Sqrt (0.5f);
+					input = new Vector2 (-sqrt, -sqrt);
+				}
+				else if (angleInDeg <= -67.5f)
+				{
+					//S
+					input = Vector2.down;
+				}
+				else if (angleInDeg <= -22.5f)
+				{
+					// SE
+					float sqrt = Mathf.Sqrt (0.5f);
+					input = new Vector2 (sqrt, -sqrt); 
+				}
+				else if (angleInDeg <= 22.5f)
+				{
+					// E
+					input = Vector2.right;
+				}
+				else if (angleInDeg <= 67.5f)
+				{
+					//NE
+					float sqrt = Mathf.Sqrt (0.5f);
+					input = new Vector2 (sqrt, sqrt);
+				}
+				else if (angleInDeg <= 112.5f)
+				{
+					//N
+					input = Vector2.up;
+				}
+				else if (angleInDeg <= 157.5)
+				{
+					// NW
+					float sqrt = Mathf.Sqrt (0.5f);
+					input = new Vector2 (-sqrt, sqrt);
+				}
+				else
+				{
+					//W
+					input = Vector2.left;
+				}
+			}
 			shootDir = input;
 			transform.up = input;
 		}
