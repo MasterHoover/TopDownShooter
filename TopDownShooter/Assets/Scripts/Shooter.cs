@@ -130,8 +130,9 @@ public class Shooter : MonoBehaviour
 					input = Vector2.left;
 				}
 			}
+			Debug.Log ("input: " + input + "\t shootDir: " + shootDir);
 			shootDir = input;
-			transform.up = input;
+			transform.rotation = Quaternion.LookRotation (Vector3.forward, input);
 		}
 
 		if (canShoot) 

@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\AvatarController.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EventArgs\DiedEventArgs.cs" />
+     <Compile Include="Assets\Scripts\FollowAvatar.cs" />
      <Compile Include="Assets\Scripts\HPScript.cs" />
      <Compile Include="Assets\Scripts\InputsNames.cs" />
      <Compile Include="Assets\Scripts\MovementInterface.cs" />
