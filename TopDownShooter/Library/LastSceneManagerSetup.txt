@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/HooverWorkshop/MovingScriptTest/MovingScriptTest.unity
+- path: Assets/HooverWorkshop/Arena.unity
   isLoaded: 1
   isActive: 1

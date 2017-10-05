@@ -12,7 +12,7 @@ public abstract class Projectile : MonoBehaviour
 {
 	protected Vector2 direction; // Hold the direction of the shot set by the shooter.\
 	public float damage = 1f;
-	public float speed = 3f;
+	protected float speed = 3f;
 	protected Allegiance allegiance = Allegiance.None;
 
 	public enum Allegiance
@@ -79,5 +79,11 @@ public abstract class Projectile : MonoBehaviour
 	{
 		get{return allegiance;}
 		set{allegiance = value;}
+	}
+
+	public float Speed 
+	{
+		get {return speed;}
+		set { speed = value; }
 	}
 }

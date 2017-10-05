@@ -5,8 +5,12 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
 	public Projectile projectile;
-	public float distanceOffset = 1f;
 	public float shootCooldown = 0.5f;
+	public float bulletSpeed = 15f;
+	public AimingType aimingType;
+
+	public ShootingType shootingType;
+	public float distanceOffset = 1f;
 	private bool canShoot = true;
 	private bool rTriggerReleased = true;
 	private Vector2 shootDir;
@@ -26,8 +30,7 @@ public class Shooter : MonoBehaviour
 		Dir8
 	}
 
-	public ShootingType shootingType;
-	public AimingType aimingType;
+
 	public ShootingInterface shootingScript;
 
 	void Awake ()
@@ -156,7 +159,7 @@ public class Shooter : MonoBehaviour
 	{
 		if (InputDirection != Vector2.zero)
 		{
-			shootingScript.Shoot (shootDir, Projectile.Allegiance.Good);
+			shootingScript.Shoot (shootDir, bulletSpeed, Projectile.Allegiance.Good);
 			TriggerCooldown ();
 		}
 	}
@@ -165,7 +168,7 @@ public class Shooter : MonoBehaviour
 	{
 		if (Input.GetButtonDown ("Fire3"))
 		{
-			shootingScript.Shoot (shootDir, Projectile.Allegiance.Good);
+			shootingScript.Shoot (shootDir, bulletSpeed, Projectile.Allegiance.Good);
 			canShoot = false;
 			TriggerCooldown ();
 		}
@@ -176,7 +179,7 @@ public class Shooter : MonoBehaviour
 		float rTrigger = Input.GetAxisRaw ("RTrigger");
 		if (rTriggerReleased && rTrigger == 1f)
 		{
-			shootingScript.Shoot (shootDir, Projectile.Allegiance.Good);
+			shootingScript.Shoot (shootDir, bulletSpeed, Projectile.Allegiance.Good);
 			canShoot = false;
 			TriggerCooldown ();
 		}
