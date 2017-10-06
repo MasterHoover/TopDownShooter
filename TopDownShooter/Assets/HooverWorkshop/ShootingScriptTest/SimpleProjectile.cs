@@ -29,27 +29,34 @@ public class SimpleProjectile : Projectile
 		Destroy (gameObject);
 	}
 
-	protected override void EnemyEnter (Enemy enemy)
-	{
-		Debug.Log ("Hit [" + enemy.displayName + "] by " + damage + " damage!");
-		if (enemy.HPScript != null)
-		{
-			enemy.HPScript.hp -= damage;
-		}
-		else
-		{
-			Debug.LogWarning ("Enemy[" + enemy.name + "] doesn't have an HPScript.");
- 		}
-		Destroy (gameObject);
-	}
-
-	void OnCollisionEnter2D (Collision2D col)
+	void OnTriggerEnter2D (Collider2D col)
 	{
 		if (col.gameObject.tag != "Projectile") 
 		{
-			if (allegiance == Allegiance.Good && col.gameObject.tag != "Player") 
+			if (col.gameObject.tag == "Enemy" && allegiance == Allegiance.Good)
 			{
-				Debug.Log ("[" + name + "] collided with [" + col.gameObject.name + "]");
+				HPScript hpScript = col.gameObject.GetComponent<HPScript> ();
+				if (hpScript != null)
+				{
+					hpScript.Damage (damage);
+				}
+				else
+				{
+					Debug.LogWarning ("Enemy [" + col.gameObject.name + "] doesn't have an HPScript.");
+				}
+				Destroy (gameObject);
+			}
+			else if (col.gameObject.tag == "Player" && allegiance == Allegiance.Bad)
+			{
+				HPScript hpScript = col.gameObject.GetComponent<HPScript> ();
+				if (hpScript != null)
+				{
+					hpScript.Damage (damage);
+				}
+				else
+				{
+					Debug.LogWarning ("Player [" + col.gameObject.name + "] doesn't have an HPScript.");
+				}
 				Destroy (gameObject);
 			}
 		}

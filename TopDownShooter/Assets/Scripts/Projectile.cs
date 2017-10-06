@@ -11,7 +11,7 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour 
 {
 	protected Vector2 direction; // Hold the direction of the shot set by the shooter.\
-	public float damage = 1f;
+	protected float damage;
 	protected float speed = 3f;
 	protected Allegiance allegiance = Allegiance.None;
 
@@ -41,33 +41,6 @@ public abstract class Projectile : MonoBehaviour
 			direction = value;
 		}
 	}
-		
-	void OnTriggerEnter2D (Collider2D col)
-	{
-		Enemy enemy = col.gameObject.GetComponent<Enemy> ();
-		if (enemy != null)
-		{
-			if (allegiance != Allegiance.Bad)
-			{
-				EnemyEnter (enemy);
-			}
-		}
-	}
-
-	void OnTriggerExit2D (Collider2D col)
-	{
-		Enemy enemy = col.gameObject.GetComponent<Enemy> ();
-		if (enemy != null)
-		{
-			if (allegiance != Allegiance.Bad)
-			{
-				EnemyExit (enemy);
-			}
-		}
-	}
-
-	protected abstract void EnemyEnter (Enemy col);
-	protected virtual void EnemyExit (Enemy col) {/*Undefined*/}
 
 	public float Damage
 	{

@@ -7,6 +7,7 @@ public class Shooter : MonoBehaviour
 	public Projectile projectile;
 	public float shootCooldown = 0.5f;
 	public float bulletSpeed = 15f;
+	public float damage = 1f;
 	public AimingType aimingType;
 
 	public ShootingType shootingType;
@@ -20,7 +21,7 @@ public class Shooter : MonoBehaviour
 	{
 		Forward,
 		AimAndTrigger,
-		AutoDirectional
+		Auto
 	}
 
 	public enum AimingType
@@ -29,8 +30,7 @@ public class Shooter : MonoBehaviour
 		Dir4,
 		Dir8
 	}
-
-
+		
 	public ShootingInterface shootingScript;
 
 	void Awake ()
@@ -133,7 +133,6 @@ public class Shooter : MonoBehaviour
 					input = Vector2.left;
 				}
 			}
-			Debug.Log ("input: " + input + "\t shootDir: " + shootDir);
 			shootDir = input;
 			transform.rotation = Quaternion.LookRotation (Vector3.forward, input);
 		}
@@ -144,7 +143,7 @@ public class Shooter : MonoBehaviour
 			{
 				Shoot_Forward ();
 			}
-			else if (shootingType == ShootingType.AutoDirectional)
+			else if (shootingType == ShootingType.Auto)
 			{
 				Shoot_AutoDirectional ();
 			}
@@ -159,7 +158,7 @@ public class Shooter : MonoBehaviour
 	{
 		if (InputDirection != Vector2.zero)
 		{
-			shootingScript.Shoot (shootDir, bulletSpeed, Projectile.Allegiance.Good);
+			shootingScript.Shoot (shootDir, damage, bulletSpeed, Projectile.Allegiance.Good);
 			TriggerCooldown ();
 		}
 	}
@@ -168,7 +167,7 @@ public class Shooter : MonoBehaviour
 	{
 		if (Input.GetButtonDown ("Fire3"))
 		{
-			shootingScript.Shoot (shootDir, bulletSpeed, Projectile.Allegiance.Good);
+			shootingScript.Shoot (shootDir, damage, bulletSpeed, Projectile.Allegiance.Good);
 			canShoot = false;
 			TriggerCooldown ();
 		}
@@ -179,7 +178,7 @@ public class Shooter : MonoBehaviour
 		float rTrigger = Input.GetAxisRaw ("RTrigger");
 		if (rTriggerReleased && rTrigger == 1f)
 		{
-			shootingScript.Shoot (shootDir, bulletSpeed, Projectile.Allegiance.Good);
+			shootingScript.Shoot (shootDir, damage, bulletSpeed, Projectile.Allegiance.Good);
 			canShoot = false;
 			TriggerCooldown ();
 		}

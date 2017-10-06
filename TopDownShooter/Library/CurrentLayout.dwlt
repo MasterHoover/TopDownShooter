@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 104, y: 242}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 11
+  controlID: 112
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_MinSize: {x: 613, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
-  controlID: 9
+  controlID: 110
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_MinSize: {x: 613, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 10
+  controlID: 111
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -519,9 +519,9 @@ MonoBehaviour:
     height: 455
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 1afcffff00000000
+    m_SelectedIDs: 14cafeff
+    m_LastClickedID: -79340
+    m_ExpandedIDs: 10cafeff14cafeffaafbffffcafbffffdefbffffe0fbffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -582,33 +582,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/HooverWorkshop/Materials
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/HooverWorkshop/Materials
+  - Assets/Prefabs
   m_LastFoldersGridSize: 57
   m_LastProjectPath: D:\VG Projects\SourceTree\TopDownShooter\TopDownShooter
   m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 68260000
-    m_LastClickedID: 9832
+    m_SelectedIDs: 60260000
+    m_LastClickedID: 9824
     m_ExpandedIDs: 00000000302600003826000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: MovingScriptTest
-      m_OriginalName: MovingScriptTest
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 9786
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
@@ -649,8 +649,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 66dbffff240c00002e2d000024220000441c00004aa2ffff6a1c0000401c0000861c00008a1c00002a1d0000e81f0000de1e0000000000005e1f0000de1f0000d61f0000d21e0000b4200000b8200000c0200000faafffff38daffff6692ffff3e200000b2200000ce1e0000381c0000161e0000221e0000341c0000e01d0000ec1d0000a41d0000901d00009e1d00008e1d0000f01d00001a1c00003e1c0000201c0000941d0000a61d0000f61d00003a1c0000ea1d0000a01d00006a2500006c2500008c2700003680ffffdc270000ba260000e0270000864b0000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: 66dbffff240c00002e2d000024220000441c00004aa2ffff6a1c0000401c0000861c00008a1c00002a1d0000e81f0000de1e0000000000005e1f0000de1f0000d61f0000d21e0000b4200000b8200000c0200000faafffff38daffff6692ffff3e200000b2200000ce1e0000381c0000161e0000221e0000341c0000e01d0000ec1d0000a41d0000901d00009e1d00008e1d0000f01d00001a1c00003e1c0000201c0000941d0000a61d0000f61d00003a1c0000ea1d0000a01d00006a2500006c2500008c2700003680ffffdc270000ba260000e0270000864b00005a260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

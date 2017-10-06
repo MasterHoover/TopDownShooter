@@ -29,7 +29,6 @@ public class BattleLog : MonoBehaviour
 		HPScript[] hpScripts = GameObject.FindObjectsOfType<HPScript> ();
 		foreach (HPScript s in hpScripts) 
 		{
-			s.Died += OnInstanceKilled;
 			Debug.Log (name + " subscribed to " + s.name);
 		}
 	}

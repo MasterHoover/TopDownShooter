@@ -12,10 +12,13 @@ using UnityEngine;
 
 public class TestShooter : MonoBehaviour 
 {
+	public Projectile projectile;
 	public ShootingInterface shootingScript;
 	public DirectionPoint directionPoint;
 	public Projectile.Allegiance allegiance;
+	public float damage = 1f;
 	public float speed = 15f;
+	public float distanceOffset = 5.5f;
 
 	void Update ()
 	{
@@ -23,7 +26,7 @@ public class TestShooter : MonoBehaviour
 		{
 			if (shootingScript != null && directionPoint != null)
 			{
-				shootingScript.Shoot (directionPoint.Direction, speed, allegiance); // Shoots toward the direction given from the DirectionPoint
+				shootingScript.Shoot (directionPoint.Direction, damage, speed, allegiance); // Shoots toward the direction given from the DirectionPoint
 			}
 		}
 	}

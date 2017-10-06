@@ -5,12 +5,14 @@ using System;
 
 public class HPScript : MonoBehaviour 
 {
-	public float hp = 1.0f;
-	public DamageSource dmgSource;
+	public float maxHP = 1.0f;
+	private float hp;
 	private const float MARGIN_OF_ERROR = 0.001f;
 
-	public delegate void DiedHandler (object source, EventArgs e);
-	public event DiedHandler Died;
+	void Awake ()
+	{
+		hp = maxHP;
+	}
 
 	protected virtual void OnDeathAction ()
 	{
@@ -22,15 +24,11 @@ public class HPScript : MonoBehaviour
 		if (hp <= 0f + MARGIN_OF_ERROR)
 		{
 			OnDeathAction ();
-			OnDeath (this, new DiedEventArgs (dmgSource));
 		}
 	}
 
-	protected void OnDeath (object source, EventArgs e)
+	public virtual void Damage (float amount)
 	{
-		if (Died != null) 
-		{
-			Died (source, e);
-		}
+		hp -= amount;
 	}
 }

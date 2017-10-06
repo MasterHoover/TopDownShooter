@@ -13,12 +13,13 @@ public class ShootingInterface : MonoBehaviour
 	private Projectile projectile; // The projectile instantiated. 
 	private float distanceOffset = 1f; // Distance offset between this object and the instantiated Projectile
 
-	public void Shoot (Vector2 direction, float speed, Projectile.Allegiance allegiance)
+	public void Shoot (Vector2 direction, float damage, float speed, Projectile.Allegiance allegiance)
 	{
 		if (projectile != null)
 		{
 			Vector3 spawnPos = transform.position + new Vector3 (direction.x, direction.y, 0f) * distanceOffset; // Set spawnPos
 			Projectile instance = (Projectile) Instantiate (projectile, spawnPos, Quaternion.identity); // Instantiate the Projectile
+			instance.Damage = damage;
 			instance.Speed = speed;
 			instance.MyAllegiance = allegiance;
 			instance.Direction = direction; // Set direction to the Projectile. The script needs it to move toward the direction.
