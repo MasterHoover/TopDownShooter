@@ -57,7 +57,10 @@
      <Compile Include="Assets\HooverWorkshop\ShootingScriptTest\ShowShootingDir.cs" />
      <Compile Include="Assets\HooverWorkshop\ShootingScriptTest\SimpleProjectile.cs" />
      <Compile Include="Assets\HooverWorkshop\ShootingScriptTest\TestShooter.cs" />
+     <Compile Include="Assets\Scripts\Avatar.cs" />
      <Compile Include="Assets\Scripts\AvatarController.cs" />
+     <Compile Include="Assets\Scripts\AvatarRespawner.cs" />
+     <Compile Include="Assets\Scripts\DamageOnCollision.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EventArgs\DiedEventArgs.cs" />
      <Compile Include="Assets\Scripts\FollowAvatar.cs" />
