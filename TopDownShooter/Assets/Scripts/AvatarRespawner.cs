@@ -8,6 +8,19 @@ public class AvatarRespawner : MonoBehaviour
 	private GameObject a;
 	private Vector3 startPos;
 	private Quaternion startRot;
+	private static AvatarRespawner instance;
+
+	void Awake ()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy (gameObject);
+		}
+	}
 
 	void Start ()
 	{
@@ -38,5 +51,15 @@ public class AvatarRespawner : MonoBehaviour
 		{
 			a = Instantiate<GameObject> (avatarPrefab, startPos, startRot); 
 		}
+	}
+
+	public GameObject Avatar
+	{
+		get{ return a; }
+	}
+
+	public static AvatarRespawner Instance
+	{
+		get{ return instance; }
 	}
 }

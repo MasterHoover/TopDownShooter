@@ -10,8 +10,16 @@ public class Enemy : MonoBehaviour
 	public float maxHP = 2f;
 	public float onCollisionDamage = 1f;
 	public string[] onCollisionDamageTags = { "Player" };
+	public float aggroDistance = 10f;
+	public bool showAggroDistance;
+	private EnemyVision visionScript;
 
 	void Awake ()
+	{
+		ComponentSetup ();
+	}
+
+	protected virtual void ComponentSetup ()
 	{
 		hpScript = GetComponent<HPScript> ();
 		if (hpScript == null)
@@ -28,12 +36,39 @@ public class Enemy : MonoBehaviour
 		}
 		onCollisionDamageScript.Damage = onCollisionDamage;
 		onCollisionDamageScript.TagList = onCollisionDamageTags;
+		visionScript = GetComponent<EnemyVision> ();
+		if (visionScript == null)
+		{
+			visionScript = gameObject.AddComponent<EnemyVision> ();
+		}
+		visionScript.AggroDistance = aggroDistance;
 	}
 
 	protected virtual void OnDeath (object source, System.EventArgs e)
 	{
 		Debug.Log ("[" + gameObject.name + "] just died.");
 		Destroy (gameObject);
+	}
+
+	protected virtual void OnAvatarDetected ()
+	{
+		
+	}
+
+	protected virtual void OnLostVision ()
+	{
+		
+	}
+
+	void OnDrawGizmos ()
+	{
+		if (showAggroDistance)
+		{
+			Color c = Color.red;
+			c.a = 0.4f;
+			Gizmos.color = c;
+			Gizmos.DrawSphere (transform.position, aggroDistance);
+		}
 	}
 
 	public HPScript HPScript

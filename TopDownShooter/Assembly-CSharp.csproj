@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\AvatarRespawner.cs" />
      <Compile Include="Assets\Scripts\DamageOnCollision.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyVision.cs" />
      <Compile Include="Assets\Scripts\EventArgs\DiedEventArgs.cs" />
      <Compile Include="Assets\Scripts\FollowAvatar.cs" />
      <Compile Include="Assets\Scripts\HPScript.cs" />
@@ -70,6 +71,7 @@
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\Shooter.cs" />
      <Compile Include="Assets\Scripts\ShootingInterface.cs" />
+     <Compile Include="Assets\Scripts\VectorFunc.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
