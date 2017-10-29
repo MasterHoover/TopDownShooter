@@ -17,10 +17,13 @@ public class MovementInterface : MonoBehaviour
 
 	public void Move (Vector2 direction, float speed)
 	{
+		direction.Normalize ();
 		if (rb != null) 
 		{
-			Vector2 currentPos = new Vector2 (transform.position.x, transform.position.y);
-			rb.MovePosition (currentPos + direction * speed * Time.deltaTime);
+			Vector2 currentPos = VectorFunc.ConvertTo2DVec (transform.position);
+			Debug.DrawRay (currentPos, direction, Color.blue);
+			Debug.Log ((direction * speed * Time.deltaTime).magnitude);
+			rb.position = (currentPos + direction * speed * Time.deltaTime);
 		} 
 		else 
 		{

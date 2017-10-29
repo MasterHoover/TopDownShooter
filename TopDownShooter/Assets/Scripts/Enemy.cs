@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
 	public float aggroDistance = 10f;
 	public bool showAggroDistance;
 	private EnemyVision visionScript;
+	private MovementInterface moveScript;
+	public float moveSpeed = 5f; 
 
 	void Awake ()
 	{
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
 
 	protected virtual void ComponentSetup ()
 	{
+		moveScript = GetComponent<MovementInterface> ();
 		hpScript = GetComponent<HPScript> ();
 		if (hpScript == null)
 		{
@@ -42,6 +45,9 @@ public class Enemy : MonoBehaviour
 			visionScript = gameObject.AddComponent<EnemyVision> ();
 		}
 		visionScript.AggroDistance = aggroDistance;
+		visionScript.AvatarDetected += OnAvatarDetected;
+		visionScript.LostVision += OnLostVision;
+		visionScript.SeeingAvatar += OnSeeingAvatar;
 	}
 
 	protected virtual void OnDeath (object source, System.EventArgs e)
@@ -58,6 +64,21 @@ public class Enemy : MonoBehaviour
 	protected virtual void OnLostVision ()
 	{
 		
+	}
+
+	protected virtual void OnSeeingAvatar ()
+	{
+		Charge ();
+	}
+
+	private void Charge ()
+	{
+		GameObject a = AvatarRespawner.Instance.Avatar;
+		if (a != null)
+		{
+			Debug.Log ("Charging");
+			moveScript.Move (VectorFunc.ConvertTo2DVec (a.transform.position - transform.position), moveSpeed);
+		}
 	}
 
 	void OnDrawGizmos ()

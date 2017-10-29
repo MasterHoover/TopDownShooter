@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyVision : MonoBehaviour 
 {
 	private float aggroDistance = 7f;
-	private bool sawAvatar;
+	private bool seeingAvatar;
 
 	public delegate void AvatarDetectedHandler ();
 	public event AvatarDetectedHandler AvatarDetected;
@@ -13,19 +13,26 @@ public class EnemyVision : MonoBehaviour
 	public delegate void LostVisionHandler ();
 	public event LostVisionHandler LostVision;
 
+	public delegate void SeeingAvatarHandler ();
+	public event SeeingAvatarHandler SeeingAvatar;
+
 	void Update ()
 	{
 		bool avatarInRange = AvatarInRange ();
-		bool seeingAvatar = SeeingAvatar ();
+		bool hasVision = HasVision ();
 
-		if (!sawAvatar && avatarInRange && seeingAvatar)
+		if (avatarInRange && hasVision)
 		{
-			sawAvatar = true;
-			OnAvatarDetected ();
+			if (!seeingAvatar)
+			{
+				seeingAvatar = true;
+				OnAvatarDetected ();
+			}
+			OnSeeingAvatar ();
 		}
-		else if (sawAvatar && (!avatarInRange || !seeingAvatar))
+		else if (seeingAvatar && (!avatarInRange || !hasVision))
 		{
-			sawAvatar = false;
+			seeingAvatar = false;
 			OnLostVision ();
 		}
 	}
@@ -48,6 +55,14 @@ public class EnemyVision : MonoBehaviour
 		}
 	}
 
+	void OnSeeingAvatar ()
+	{
+		if (SeeingAvatar != null)
+		{
+			SeeingAvatar ();
+		}
+	}
+
 	public float AggroDistance
 	{
 		set{ aggroDistance = value; }
@@ -59,7 +74,7 @@ public class EnemyVision : MonoBehaviour
 			&& Vector2.Distance (VectorFunc.ConvertTo2DVec (AvatarRespawner.Instance.Avatar.transform.position), VectorFunc.ConvertTo2DVec (transform.position)) < aggroDistance;
 	}
 
-	private bool SeeingAvatar ()
+	private bool HasVision ()
 	{
 		if (AvatarRespawner.Instance.Avatar != null)
 		{

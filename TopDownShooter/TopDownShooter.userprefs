@@ -1,13 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Avatar.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MovementInterface.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemy.cs" Line="29" Column="54" />
-      <File FileName="Assets\Scripts\HPScript.cs" Line="17" Column="13" />
-      <File FileName="Assets\Scripts\DamageOnCollision.cs" Line="17" Column="1" />
-      <File FileName="Assets\Scripts\AvatarRespawner.cs" Line="30" Column="4" />
-      <File FileName="Assets\Scripts\Avatar.cs" Line="11" Column="3" />
-      <File FileName="Assets\Scripts\FollowAvatar.cs" Line="25" Column="4" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="80" Column="15" />
+      <File FileName="Assets\Scripts\MovementInterface.cs" Line="26" Column="18" />
+      <File FileName="Assets\Scripts\EnemyVision.cs" Line="19" Column="13" />
+      <File FileName="Assets\Scripts\AvatarController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
